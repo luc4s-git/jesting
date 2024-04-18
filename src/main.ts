@@ -11,7 +11,7 @@ Classes de alto nível são classes que gerenciam as classes de baixo nível.
 import { ShoppingCart } from './classes/shopping-cart';
 import { Order } from './classes/order';
 import { Messaging } from './services/messaging';
-import { Persistency } from './services/persistency';
+import { Persistence } from './services/persistence';
 import { Product } from './classes/product';
 import { NoDiscount } from './classes/discount';
 import { EnterpriseCustomer } from './classes/customer';
@@ -21,7 +21,7 @@ import { EnterpriseCustomer } from './classes/customer';
 const noDiscount = new NoDiscount();
 const shoppingCart = new ShoppingCart(noDiscount);
 const messaging = new Messaging();
-const persistency = new Persistency();
+const persistency = new Persistence();
 // const individualCustomer = new IndividualCustomer(
 //   'Luiz',
 //   'Miranda',
