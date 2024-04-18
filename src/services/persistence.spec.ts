@@ -1,13 +1,29 @@
-describe('Numbers', () => {
-  it('should not return "2"', () => {
-    const number = 1;
-    expect(number).not.toBe(2);
-  });
-});
+import { Persistence } from './persistence';
 
-describe('Strings', () => {
-  test('should return "John"', () => {
-    const name = 'John';
-    expect(name).toBe('John');
+describe('Persistence', () => {
+  afterEach(() => jest.clearAllMocks());
+
+  it('should return undefined', () => {
+    // system under test
+    const sut = new Persistence();
+    expect(sut.saveOrder()).toBeUndefined();
+  });
+
+  it('should call console.log once', () => {
+    const sut = new Persistence();
+    const consoleSpy = jest.spyOn(console, 'log');
+
+    sut.saveOrder(); // needs to execute to call console.log
+
+    expect(consoleSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should call console.log once', () => {
+    const sut = new Persistence();
+    const consoleSpy = jest.spyOn(console, 'log');
+
+    sut.saveOrder(); // needs to execute to call console.log
+
+    expect(consoleSpy).toHaveBeenCalledWith('Pedido salvo com sucesso...');
   });
 });
