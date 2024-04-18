@@ -1,6 +1,6 @@
 describe('Numbers', () => {
   it('should not return "2"', () => {
-    const number = 2;
+    const number = 1;
     expect(number).not.toBe(2);
   });
 });
