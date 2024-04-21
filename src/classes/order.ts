@@ -10,7 +10,7 @@ export class Order {
   constructor(
     private readonly cart: ShoppingCartProtocol,
     private readonly messaging: MessagingProtocol,
-    private readonly persistency: PersistenceProtocol,
+    private readonly persistence: PersistenceProtocol,
     private readonly customer: CustomerOrder,
   ) {}
 
@@ -26,7 +26,7 @@ export class Order {
 
     this._orderStatus = 'closed';
     this.messaging.sendMessage(`Seu pedido com total de ${this.cart.totalWithDiscount()} foi recebido.`);
-    this.persistency.saveOrder();
+    this.persistence.saveOrder();
     this.cart.clear();
 
     console.log('O cliente é:', this.customer.getName(), this.customer.getIDN());
